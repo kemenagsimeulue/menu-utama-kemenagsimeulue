@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control Chrome</title>
+</head>
+<body>
+    <h1>Control Google Chrome</h1>
+
+    <button onclick="closeCurrentTab()">Close Current Tab</button>
+
+    <form onsubmit="openNewTab(); return false;">
+        <label for="newUrl">Enter URL:</label>
+        <input type="text" id="newUrl" name="newUrl" value="https://linktr.ee/kemenagsimeulue" required>
+        <button type="submit">Open URL</button>
+    </form>
+
+    <script>
+        // Function to close current tab
+        function closeCurrentTab() {
+            window.close(); // This will attempt to close the current tab or window
+        }
+
+        // Function to open new URL in a new tab
+        function openNewTab() {
+            var url = document.getElementById('newUrl').value;
+            if (url.trim() !== '') {
+                window.open(url, '_blank'); // Open URL in a new tab
+            } else {
+                alert('Please enter a valid URL');
+            }
+        }
+    </script>
+</body>
+</html>
